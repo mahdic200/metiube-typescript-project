@@ -25,5 +25,14 @@
 - آماده کردن تیلویند
 - اولین کامیت پروژه برای این جلسه
 
+# کد های پروژه
+
+برای تیلویند `npx tailwind init`
+
+برای کامپایل کردن تیلویند `npx tailwind -i ./styles/main.css -o ./styles/index.css --watch`
+
+# برای تایپ اسکریپت
+
+`tsc ./src/ts/index.ts --outDir ./build/js/ --watch`
 # توضیحات و لینک ها
 
