@@ -10,7 +10,7 @@ TSC_output_directory = "./build/js"
 Ejs_input_directory = "./src/pages"
 Ejs_input_file = "./src/pages/index.ejs"
 Ejs_output_file = "./build/index.html"
-Ejs_interval = 0.1
+Ejs_interval = 1
 
 
 import os
