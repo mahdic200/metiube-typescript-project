@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%
+    var title, body, head_tag, script;
+    const printOrDefault = (input, alt = '') => {
+        return input !== undefined && input !== null ? input : alt;
+    };
+    %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/index.css">
+    <%- printOrDefault(head_tag) %>
+    <title><%- printOrDefault(title) %></title>
+</head>
+<body>
+    <% const begin = "./" %>
+    <%- include(`${begin}header.ejs`) %>
+
+
+    <main class="h-[50vh] bg-emerald-200">
+        <%- printOrDefault(body) %>
+    </main>
+
+    <%- include(`${begin}footer.ejs`) %>
+    <%- printOrDefault(script) %>
+</body>
+</html>
