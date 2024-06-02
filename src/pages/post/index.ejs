@@ -1,0 +1,9 @@
+<% 
+    const body = include('./body.ejs');
+    const title = "posts index page";
+ %>
+
+<%- include("../layouts/master.ejs", {
+    body: body,
+    title: title
+}) %>
