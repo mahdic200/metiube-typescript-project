@@ -152,7 +152,7 @@ def Ts_changed(added_or_modified, deleted):
             out_file = filepath.replace(pages_path, "")
             out_file = build_path + out_file
             out_dir = os.path.dirname(out_file)
-            system(f"tsc {filepath} --outDir {out_dir}")
+            system(f"tsc {filepath} --outDir {out_dir} --target es2018")
 
     if deleted:
         print(f"Deleted: {deleted}")
