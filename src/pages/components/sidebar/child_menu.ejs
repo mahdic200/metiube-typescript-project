@@ -1,0 +1,16 @@
+<%
+var title, link;
+    const printOrDefault = (input, alt = '') =>  input !== undefined && input !== null ? input : alt;
+%>
+
+
+<li class="rounded-md overflow-hidden">
+    <a
+        href="<%- printOrDefault(link) %>"
+        class="duration-[350ms] relative p-2 block cursor-pointer hover:bg-[#dadada]"
+    >
+        <%- printOrDefault(title) %>
+    </a>
+</li>
+
+

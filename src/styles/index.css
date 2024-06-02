@@ -1,4 +1,44 @@
+@import "./sidebar";
+@import "./header";
+@import "./footer";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --headerHeight: 4rem;
+    --sidebarWidth: 18vw;
+    --sidebarColor: #ededed;
+    --bodyColor: #f3f4f4;
+}
+
+
+@layer components {
+    body {
+        @apply h-[100vh]
+        bg-[var(--bodyColor)]
+        grid
+        lg:grid-cols-[auto_var(--sidebarWidth)]
+        grid-rows-[var(--headerHeight)_auto]
+        sm:grid-cols-1 overflow-auto;
+    }
+
+
+    main {
+        @apply
+        col-[1/span_2]
+        row-[2]
+        lg:col-[1]
+        lg:row-[2]
+        overflow-y-auto;
+    }
+    #adminpanel_sidebar .asideClose {
+        @apply
+        lg:hidden
+        ;
+    }
+}
+#adminpanel_sidebar.active {
+    right: 0;
+}

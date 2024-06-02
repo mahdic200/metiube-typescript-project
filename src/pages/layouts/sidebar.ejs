@@ -1,0 +1,25 @@
+<% 
+    const childMenu = (title, link) => include('../components/sidebar/child_menu.ejs', {title, link});
+
+%>
+
+
+<aside dir="rtl" id="adminpanel_sidebar">
+    <section class="bg-teal-300 h-[var(--headerHeight)] mb-3 flex justify-center items-center">
+        <h1 class="text-center w-full text-[1.2rem] lg:text-[1.5rem] text-white h-[fit-content]">
+            Admin Panel
+        </h1>
+        <section class="h-full text-xl p-3 flex items-start">
+            <section
+                class="asideClose cursor-pointer text-white drop-shadow-[1px_1px_1px_black] text-xl"
+            >
+            ×
+            </section>
+        </section>
+    </section>
+    <ul class="menu-items w-full flex flex-col gap-y-1 justify-center">
+        
+        <%- childMenu('صفحه ی اصلی', "/") %>
+        <%- childMenu('دسته بندی ها', "/category") %>
+    </ul>
+</aside>

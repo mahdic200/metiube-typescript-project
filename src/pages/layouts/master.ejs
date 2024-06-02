@@ -15,14 +15,20 @@
 </head>
 <body>
     <% const begin = "./" %>
+    <%- include(`${begin}sidebar.ejs`) %>
     <%- include(`${begin}header.ejs`) %>
 
 
-    <main class="h-[50vh] bg-emerald-200">
-        <%- printOrDefault(body) %>
+    <main dir="rtl">
+        <section class="p-7">
+            <section class="card-body bg-white drop-shadow-lg rounded-md min-h-[80vh]">
+                <%- printOrDefault(body) %>
+            </section>
+        </section>
+        <%- include(`${begin}footer.ejs`) %>
     </main>
 
-    <%- include(`${begin}footer.ejs`) %>
+    <script type="module" src="/js/index.js"></script>
     <%- printOrDefault(script) %>
 </body>
 </html>

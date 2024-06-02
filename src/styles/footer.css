@@ -1,0 +1,8 @@
+@layer components {
+    #adminpanel_footer {
+        @apply
+        col-[1/span_2]
+        bg-rose-100
+        p-[1rem];
+    }
+}

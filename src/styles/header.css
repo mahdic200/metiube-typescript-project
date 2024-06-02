@@ -1,0 +1,19 @@
+@layer components {
+    
+    #adminpanel_header {
+        @apply
+        w-[100%]
+        h-[calc(var(--headerHeight))]
+        bg-teal-300
+        lg:row-[1]
+        lg:col-[1]
+        row-[1]
+        col-[1/span_2]
+        px-7
+        flex
+        items-center
+        justify-between
+        border-[2px]
+        border-teal-300;
+    }
+}
