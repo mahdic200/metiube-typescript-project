@@ -1,0 +1,16 @@
+table td, table th {
+    padding: 0.625rem 1.5rem;
+}
+table tr {
+    border-bottom: 1px solid #d4d8dd;
+    box-shadow: inset 0 0 0 9999px #f8f9fa;
+}
+table tbody tr td {
+    background-color: inherit;
+}
+table tbody tr td:last-child {
+    direction: ltr;
+}
+.table-action-dropdown.active {
+    display: block!important;
+}
