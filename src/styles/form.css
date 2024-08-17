@@ -5,6 +5,9 @@
     .input-group {
         @apply  flex flex-col justify-center items-center h-[2.35rem];
     }
+    .input-group > select {
+        @apply bg-white;
+    }
     .input-group > .rmdp-container > input,
     .input-group > input,
     .input-group > select,
