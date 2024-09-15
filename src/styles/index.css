@@ -1,6 +1,8 @@
 @import "./sidebar";
 @import "./header";
 @import "./footer";
+@import "./form";
+@import "./table";
 
 @tailwind base;
 @tailwind components;

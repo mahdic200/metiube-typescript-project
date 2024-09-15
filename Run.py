@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Tailwind configurations
 Tail_input_file = "./src/styles/index.css"
 Tail_output_file = "./build/styles/index.css"
@@ -152,7 +153,7 @@ def Ts_changed(added_or_modified, deleted):
             out_file = filepath.replace(pages_path, "")
             out_file = build_path + out_file
             out_dir = os.path.dirname(out_file)
-            system(f"tsc {filepath} --outDir {out_dir} --target es2018")
+            system(f"tsc {filepath} --outDir {out_dir} -p ./tsconfig.json")
 
     if deleted:
         print(f"Deleted: {deleted}")
@@ -170,7 +171,7 @@ def RunTail():
 
 
 def RunTsc():
-    watch_directory(TSC_input_directory, Ts_changed, Ejs_interval)
+    system(f"tsc --watch")
 
 
 threads = [

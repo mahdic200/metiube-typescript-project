@@ -1,2 +1,29 @@
-    <p class="text-red-500">this is category index page</p>
-    <a href="/">get back to main</a>
+<section class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-[1.375rem] gap-y-3 lg:gap-y-0">
+    <h5 class="text-[1.1rem] md:text-[1.3rem] lg:text-[1.5rem] text-gray-500">
+        لیست دسته بندی ها
+    </h5>
+    <!-- button -->
+    <section>
+        <a href="/category/create" class="bg-teal-400 hover:bg-teal-500 hover:drop-shadow-lg duration-150 drop-shadow-md text-white text-[0.9rem] lg:text-[0.9rem] p-[0.3rem_0.8rem] md:p-[0.469rem_1.2rem] rounded-md focus:outline-none inline-block">
+            افزودن
+        </a>
+        <button id="fresh" class="bg-teal-400 hover:bg-teal-500 hover:drop-shadow-lg duration-150 drop-shadow-md text-white text-[0.9rem] lg:text-[0.9rem] p-[0.3rem_0.8rem] md:p-[0.469rem_1.2rem] rounded-md focus:outline-none inline-block">
+            تازه سازی
+        </button>
+    </section>
+    <!-- end button -->
+</section>
+
+<section class="w-full min-h-[30vh] md:min-h-[80vh] overflow-x-auto relative pb-24">
+    <table class="table-auto w-full text-[0.9rem]">
+        <thead class="text-right">
+            <th>آیدی</th>
+            <th>نام</th>
+            <th>توضیحات</th>
+            <th>وضعیت</th>
+        </thead>
+        <tbody id="table_body">
+    
+        </tbody>
+    </table>
+</section>
