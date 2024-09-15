@@ -10,25 +10,46 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 });
 
-function fillTable(data: object[]) {
+function fillTable(data: CategoryInterface[]) {
     const tb: HTMLElement = document.querySelector('#table_body') as HTMLElement;
     tb.innerHTML = '';
-    for (const iter of data) {
+    data.forEach((category) => {
         let tr = document.createElement('tr');
-        for (const [key, value] of Object.entries(iter)) {
+        Object.entries(category).forEach(([_key, value]) => {
             let td = document.createElement('td');
             td.innerHTML = value;
             tr.appendChild(td);
-        }
+        });
         tb.appendChild(tr);
-    }
+    });
+    // for (const iter of data) {
+    //     let tr = document.createElement('tr');
+    //     for (const [key, value] of Object.entries(iter)) {
+    //         let td = document.createElement('td');
+    //         td.innerHTML = value;
+    //         tr.appendChild(td);
+    //     }
+    //     tb.appendChild(tr);
+    // }
 }
 
-async function fetchData () {
+interface CategoryInterface {
+    id: string;
+    name: string;
+    status: string;
+    description: string;
+}
+
+async function fetchData(): Promise<CategoryInterface[]> {
     return await fetch('http://localhost:3000/category', {
         method: 'GET'
     })
     .then((res) => {
         return res.json()
     });
+    // const res = await fetch('http://localhost:3000', {
+    //     method: 'GET'
+    // });
+    // const data: CategoryInterface[] = await res.json();
+    // return data;
 }
