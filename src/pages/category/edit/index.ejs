@@ -1,0 +1,12 @@
+<%
+    const body = include('./body.ejs');
+    const script = include('./script.ejs');
+%>
+
+
+<%- include("../../layouts/master.ejs", {
+        body: body,
+        title: "categories",
+        script: script
+    }) %>
+

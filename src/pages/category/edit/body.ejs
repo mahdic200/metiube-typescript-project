@@ -1,0 +1,66 @@
+<section class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-[1.375rem] gap-y-3 lg:gap-y-0">
+    <h5 class="text-[1.1rem] md:text-[1.3rem] lg:text-[1.5rem] text-gray-500">
+        ویرایش دسته بندی
+    </h5>
+    <!-- button -->
+    <section>
+        <a href="/category" class="bg-teal-400 hover:bg-teal-500 hover:drop-shadow-lg duration-150 drop-shadow-md text-white text-[0.9rem] lg:text-[0.9rem] p-[0.3rem_0.8rem] md:p-[0.469rem_1.2rem] rounded-md focus:outline-none inline-block">
+            بازگشت
+        </a>
+    </section>
+    <!-- end button -->
+</section>
+
+
+<!-- grid container -->
+<form class="w-full grid grid-cols-12 gap-4 p-5">
+    <!-- start input group -->
+    <section class="col-span-12 sm:col-span-6">
+        <!-- label -->
+        <label for="name" class="inline-block mb-2">
+            نام
+        </label>
+        <!-- label -->
+        <section class="input-group">
+            <input id="name" name="name" type="text">
+        </section>
+        <section class="text-red-500 pt-3"></section>
+    </section>
+    <!-- end input group -->
+    <!-- start input group -->
+    <section class="col-span-12 sm:col-span-6">
+        <!-- label -->
+        <label for="description" class="inline-block mb-2">
+            توضیحات
+        </label>
+        <!-- label -->
+        <section class="input-group">
+            <input id="description" name="description" type="text">
+        </section>
+        <section class="text-red-500 pt-3"></section>
+    </section>
+    <!-- end input group -->
+    <!-- start input group -->
+    <section class="col-span-12 sm:col-span-6">
+        <!-- label -->
+        <label for="status" class="inline-block mb-2">
+            وضعیت
+        </label>
+        <!-- label -->
+        <section class="input-group">
+            <select name="status" id="status">
+                <option value="1" selected>فعال</option>
+                <option value="2">غیر فعال</option>
+            </select>
+        </section>
+        <section class="text-red-500 pt-3"></section>
+    </section>
+    <!-- end input group -->
+
+    <section class="col-span-12">
+        <button type="submit" class="bg-teal-400 hover:bg-teal-500 hover:drop-shadow-lg duration-150 drop-shadow-md text-white text-[0.9rem] lg:text-[0.9rem] p-[0.3rem_0.8rem] md:p-[0.469rem_1.2rem] rounded-md focus:outline-none inline-block">
+            ارسال
+        </button>
+    </section>
+</form>
+<!-- end grid container -->

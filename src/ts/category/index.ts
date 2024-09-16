@@ -15,11 +15,17 @@ function fillTable(data: CategoryInterface[]) {
     tb.innerHTML = '';
     data.forEach((category) => {
         let tr = document.createElement('tr');
-        Object.entries(category).forEach(([_key, value]) => {
+        ['id', 'name', 'description', 'status'].forEach((key) => {
             let td = document.createElement('td');
-            td.innerHTML = value;
+            td.innerHTML = category[key];
             tr.appendChild(td);
         });
+            let td = document.createElement('td');
+            let a = document.createElement('a');
+            a.href = '/category/edit/?id='+category.id;
+            a.innerHTML = 'ویرایش';
+            td.appendChild(a);
+            tr.appendChild(td);
         tb.appendChild(tr);
     });
     // for (const iter of data) {
