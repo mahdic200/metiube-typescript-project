@@ -32,20 +32,21 @@ function fillTable(data: CategoryInterface[]) {
             a.innerHTML = 'ویرایش';
             td.appendChild(a);
             /* end edit button */
-            /* start edit button */
+            /* start delete button */
             let del = document.createElement('button');
             del.className = 'delete_button';
             del.setAttribute('data-link', 'http://localhost:3000/category/'+category.id);
             del.addEventListener('click', () => {
-                deleteHttpData(del.getAttribute('data-link'))
-                .then((res) => {
-                    res.ok ? alert('پاک شد !') : alert('خطایی رخ داد !');
-                    freshData();
-                });
+                if (confirm('آیا پاک بشه ؟'))
+                    deleteHttpData(del.getAttribute('data-link'))
+                    .then((res) => {
+                        res.ok ? alert('پاک شد !') : alert('خطایی رخ داد !');
+                        freshData();
+                    });
             });
             del.innerHTML = 'حذف';
             td.appendChild(del);
-            /* end edit button */
+            /* end delete button */
             /* add virtual td to tr */
             tr.appendChild(td);
         tb.appendChild(tr);
