@@ -49,4 +49,24 @@
     .input-group > input[type=file]:not(:disabled):not([readonly]) {
         cursor: pointer;
     }
+
+    #table_body tr td > * {
+        @apply
+        bg-cyan-400
+        text-white
+        mx-1
+        p-2
+        inline-block
+        rounded-md
+        hover:bg-cyan-500
+        duration-150
+        ;
+    }
+
+    #table_body tr td > button {
+        @apply
+        bg-rose-400
+        hover:bg-rose-500
+        ;
+    }
 }

@@ -1,14 +1,19 @@
+import { deleteHttpData } from '../helpers/http.js';
+
 document.addEventListener('DOMContentLoaded', async () => {
-    const data = await fetchData();
-    fillTable(data);
+    await freshData();
     const fresh = document.querySelector('button#fresh') as HTMLElement;
     fresh.addEventListener('click', async () => {
-        const tb: HTMLElement = document.querySelector('#table_body') as HTMLElement;
-        tb.innerHTML = 'loading...';
-        const data = await fetchData();
-        fillTable(data);
+        await freshData();
     });
 });
+
+async function freshData() {
+    const tb: HTMLElement = document.querySelector('#table_body') as HTMLElement;
+    tb.innerHTML = 'loading...';
+    const data = await fetchData();
+    fillTable(data);
+}
 
 function fillTable(data: CategoryInterface[]) {
     const tb: HTMLElement = document.querySelector('#table_body') as HTMLElement;
@@ -21,10 +26,27 @@ function fillTable(data: CategoryInterface[]) {
             tr.appendChild(td);
         });
             let td = document.createElement('td');
+            /* start edit button */
             let a = document.createElement('a');
             a.href = '/category/edit/?id='+category.id;
             a.innerHTML = 'ویرایش';
             td.appendChild(a);
+            /* end edit button */
+            /* start edit button */
+            let del = document.createElement('button');
+            del.className = 'delete_button';
+            del.setAttribute('data-link', 'http://localhost:3000/category/'+category.id);
+            del.addEventListener('click', () => {
+                deleteHttpData(del.getAttribute('data-link'))
+                .then((res) => {
+                    res.ok ? alert('پاک شد !') : alert('خطایی رخ داد !');
+                    freshData();
+                });
+            });
+            del.innerHTML = 'حذف';
+            td.appendChild(del);
+            /* end edit button */
+            /* add virtual td to tr */
             tr.appendChild(td);
         tb.appendChild(tr);
     });

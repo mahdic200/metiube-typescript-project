@@ -46,4 +46,10 @@ export function loadIntoForm(form: HTMLFormElement, dataObject: any) {
     })
 }
 
+export function deleteHttpData(link: string) {
+    return fetch(link, {
+        method: 'DELETE'
+    });
+}
+
 
